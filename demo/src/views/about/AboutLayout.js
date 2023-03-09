@@ -2,10 +2,10 @@ import { Outlet, Link } from "react-router-dom";
 const AboutLayout = () => {
     return (
         <>
-            <h5>ABOUT</h5>
+            <h5>About</h5>
                 <nav>
-                    <Link to='/phone-number'>Phone number</Link>
-                    <Link to='/email'>Email</Link>
+                    <Link to='/about/phone-number'>Phone number</Link> | 
+                    <Link to='/about/email'> Email</Link>
                 </nav>
                 <Outlet />
         </>

@@ -8,7 +8,7 @@ function App(props) {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path='About' element={<About />} />
+          <Route path='about/*' element={<About />} />
         </Route>
       </Routes>
     </BrowserRouter>
