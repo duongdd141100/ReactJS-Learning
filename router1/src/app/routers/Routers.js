@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Link } from 'react-router-dom'
 import { URL } from '../../common/Constant'
 import Home from '../views/Home'
 import About from '../views/About'
