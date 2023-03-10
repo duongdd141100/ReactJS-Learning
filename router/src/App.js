@@ -5,8 +5,6 @@ import { URL } from './common/Constant'
 function App() {
   return (
     <>
-    <span>duong</span>
-    
       <nav>
         <ul>
           <li>
