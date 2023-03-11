@@ -1,24 +1,33 @@
-import { Link } from 'react-router-dom'
+import { Link, Routes,Route, Navigate } from 'react-router-dom'
 import Menu from './Menu.js'
 import { useState } from 'react'
+import '../../css/MainLayout.css'
 
-
-
-// function setMenu(options, item) {
-//     menu = options.filter((option) => option.path.startsWith(item.path))
-//     console.log(menu)
-// }
 export default function MainLayout(props) {
     const [menu, setMenu] = useState([]);
     return (
         <div>
-            <ul>
-                {props.items.map((item) => <li key={item.path}><Link 
-                                                onClick={() => {setMenu(props.options.filter((option) => option.path.startsWith(item.path)))}}
-                                                to={item.path}>{item.name}</Link></li>)}
-            </ul>
-
-            <Menu menu={menu} />
+            <div className='header'>
+                {props.items.map((item) => <Link key={item.path}
+                                                onClick={() => setMenu(props.options.filter((option) => option.path.startsWith(item.path)))}
+                                                to={item.path}>{item.name}</Link>)}
+            </div>
+            <div className='body'>
+                <div className='menu'>
+                    <Menu menu={menu} />
+                </div>
+                <div className='content'>
+                    <Routes>
+                        <Route path='/' element={<Navigate to="/home" replace />}></Route>
+                        {props.items.concat(props.options).map((item) => {
+                            if (item.path === '/home') {
+                                return <Route  key={item.path} index path={item.path} element={item.components} />
+                            }
+                            return <Route key={item.path} path={item.path} element={item.components} />
+                        })}
+                    </Routes>
+                </div>
+            </div>
         </div>
 
     )
