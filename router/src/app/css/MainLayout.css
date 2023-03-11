@@ -1,0 +1,23 @@
+.header {
+    background-color: antiquewhite;
+    padding: 20px;
+}
+.header a {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: inherit;
+    padding-bottom: inherit;
+
+    color: black;
+}
+
+.body {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+.body .menu {
+    grid-column: 1 / 2;
+}
+.body .content {
+    grid-column: 2 / 13;
+}
