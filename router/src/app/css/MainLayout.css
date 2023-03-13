@@ -1,5 +1,5 @@
 .header {
-    background-color: antiquewhite;
+    background-color: rgb(250, 235, 215);
     padding: 20px;
 }
 .header a {
@@ -7,8 +7,8 @@
     padding-right: 30px;
     padding-top: inherit;
     padding-bottom: inherit;
-
     color: black;
+    text-decoration: none;
 }
 
 .body {
@@ -20,4 +20,15 @@
 }
 .body .content {
     grid-column: 2 / 13;
+}
+a::selection {
+    color: #FFF;
+}
+.deactive-header-link {
+    opacity: 0.5;
+
+}
+.active-header-link {
+    opacity: 1;
+    background-color:  rgb(250, 235, 150);
 }
