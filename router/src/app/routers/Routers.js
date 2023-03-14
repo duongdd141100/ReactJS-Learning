@@ -6,7 +6,7 @@ import PhoneNumber from '../views/components/PhoneNumber'
 import Docs from '../views/components/Docs'
 import MainLayout from '../views/layouts/MainLayout'
 import { useState } from 'react'
-
+import { Routes,Route } from 'react-router-dom'
 
 
 function Routers() {
@@ -40,7 +40,13 @@ function Routers() {
         },
     ];
     return (
-        <MainLayout items={items} options={options}/>
+        <MainLayout items={items} options={options}>
+            <Routes>
+                {items.map((item) => {
+                return <Route key={item.path} path={item.path} element={item.components} />;
+                })}
+            </Routes>
+        </MainLayout>
     );
 }
 
