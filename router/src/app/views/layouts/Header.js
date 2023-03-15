@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-export default function Header({items, setMenu, options, setParentUrl}) {
+export default function Header({items}) {
     return (
         <>
         {items.map((item) => <NavLink

@@ -1,6 +1,4 @@
-function Home({ setParentUrl, text }) {
-    setParentUrl('/home')
-    console.log(text)
+function Home() {
     return (
         <span>Home</span>
     );
